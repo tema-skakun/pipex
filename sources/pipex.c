@@ -6,13 +6,13 @@
 /*   By: fdarkhaw <fdarkhaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:30:54 by fdarkhaw          #+#    #+#             */
-/*   Updated: 2022/01/26 08:06:42 by fdarkhaw         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:38:44 by fdarkhaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
-int	ft_errors(int i)
+void	ft_errors(int i)
 {
 	if (i == 1)
 	{
@@ -26,7 +26,6 @@ int	ft_errors(int i)
 	else if (i == 4)
 		perror("Error");
 	exit (0);
-	return (1);
 }
 
 void	run_cmd(char *av, char **envp)

@@ -6,13 +6,11 @@
 /*   By: fdarkhaw <fdarkhaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:03:16 by fdarkhaw          #+#    #+#             */
-/*   Updated: 2022/01/26 07:02:58 by fdarkhaw         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:00:59 by fdarkhaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
-
-#include <stdio.h>
+#include "pipex.h"
 
 void	ft_free(char **p_str)
 {
@@ -88,7 +86,7 @@ int	check_input(int argc, char **argv, char **envp)
 	char	*env_path2;
 
 	if (argc != 5)
-		return (ft_errors(1));
+		ft_errors(1);
 	cmd1 = search_cmd(argv[2]);
 	cmd2 = search_cmd(argv[3]);
 	env_path1 = search_path(envp, cmd1[0]);
@@ -99,9 +97,9 @@ int	check_input(int argc, char **argv, char **envp)
 	{
 		free(env_path1);
 		free(env_path2);
-		return (ft_errors(2));
+		ft_errors(2);
 	}
 	if (access(argv[1], F_OK | R_OK) != 0)
-		return (ft_errors(3));
+		ft_errors(3);
 	return (0);
 }
